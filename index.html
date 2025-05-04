@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- manrope-font -->
+    <!-- -font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -39,6 +39,26 @@
 </head>
 <body class="mulish">
     <header class="container mx-auto">
+      <!-- navber -->
+       <nav class="mt-6">
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl md:text-3xl">Retro</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1 md:text-xl text-des">
+            <div class="tooltip" data-tip="Home">
+            <li><a><i class="fa-solid fa-house"></i></a></li>
+          </div>
+            <div class="tooltip" data-tip="Edit"><li><a><i class="fa-solid fa-pen"></i></a></li></div>
+            <div class="tooltip" data-tip="Add"><li><a><i class="fa-solid fa-user-plus"></i></a></li></div>
+            <div class="tooltip" data-tip="Flag"><li><a><i class="fa-solid fa-flag"></i></a></li></div>
+          </ul>
+          <button class="btn rounded-full bg-secondery text-white md:text-xl text-sm p-2 md:px-4">Sign in</button>
+        </div>
+      </div>
+    </nav>
+      
 
     </header>
 
