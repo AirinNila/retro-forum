@@ -9,14 +9,29 @@ const allPost = async(category) => {
 
 const handlePost = (data) =>{
     const catagories = document.getElementById('catagories-container')
+   
+
+    // clear search historu
+    catagories.textContent = '';
     data.forEach(element => {
+         // isActive
+    const activeFeild = document.getElementById('active-or-not')
+    // if(element.isActive === true){
+    //   activeFeild.classList.add('bg-green')
+    // }
+    // else{
+    //   activeFeild.classList.add('bg-red')
+    // }
         //console.log(element)
         const newDiv = document.createElement('div')
         newDiv.classList = `flex justify-start p-2 md:p-4 bg-[#F3F3F5] rounded-xl md:rounded-2xl gap-2 md:gap-4`
         newDiv.innerHTML=`
                 
            
-            <div class="w-16 rounded-xl"><img src="${element.image}" alt="display class='rounded-xl'"></div>
+            <div class="w-16">
+            <img src="${element.image}" alt="display"  class="rounded-xl w-16 bg-cover">
+            <div id="active-or-not" class="rounded-full"></div>
+            </div>
            
             <div class="flex flex-col gap-2 justify-center">
               <div class="flex gap-2 md:gap-4 text-[#12132DCC] md:text-sm ">
@@ -51,8 +66,12 @@ const handlePost = (data) =>{
          
         `
 
+
         catagories.appendChild(newDiv)
+      
+       
     });
+    spinnerHandler(false)
 }
 
 const greenButtonHandler = async (id) => {
@@ -72,15 +91,27 @@ const greenButtonHandler = async (id) => {
                 </div>
   `
   titleConainer.appendChild(newItem)
+ 
 }
 
 // search handler
 const searchHandler = () => {
   const getinputField = document.getElementById('search-field')
   const getValue = getinputField.value ;
-  console.log(getValue)
+  spinnerHandler(true)
   allPost(getValue)
  
+}
+
+// for spinner
+const spinnerHandler = (dataLoading) => {
+  const spinnerFeild = document.getElementById('spinner-feild')
+  if(dataLoading){
+    spinnerFeild.classList.remove('hidden')
+  }
+  else{
+    spinnerFeild.classList.add('hidden')
+  }
 }
 
 allPost()
