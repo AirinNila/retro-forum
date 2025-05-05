@@ -1,9 +1,10 @@
 // all post
-const allPost = async() => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const allPost = async(category) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
     const data = await res.json()
     const posts = data.posts;
     handlePost(posts)
+    
 }
 
 const handlePost = (data) =>{
@@ -71,6 +72,15 @@ const greenButtonHandler = async (id) => {
                 </div>
   `
   titleConainer.appendChild(newItem)
+}
+
+// search handler
+const searchHandler = () => {
+  const getinputField = document.getElementById('search-field')
+  const getValue = getinputField.value ;
+  console.log(getValue)
+  allPost(getValue)
+ 
 }
 
 allPost()
