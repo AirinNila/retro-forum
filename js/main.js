@@ -9,7 +9,7 @@ const allPost = async() => {
 const handlePost = (data) =>{
     const catagories = document.getElementById('catagories-container')
     data.forEach(element => {
-        console.log(element)
+        //console.log(element)
         const newDiv = document.createElement('div')
         newDiv.classList = `flex justify-start p-2 md:p-4 bg-[#F3F3F5] rounded-xl md:rounded-2xl gap-2 md:gap-4`
         newDiv.innerHTML=`
@@ -41,9 +41,9 @@ const handlePost = (data) =>{
                   </div>
                 </div>
                
-                <div class="bg-[#10B981] text-white text-base rounded-full p-2">
+                <button onclick="greenButtonHandler('${element.id}')" class="bg-[#10B981] text-white text-base rounded-full p-2">
                   <i class="fa-solid fa-envelope-open"></i>
-                </div>
+                </button>
               </div>
             </div>
 
@@ -52,6 +52,25 @@ const handlePost = (data) =>{
 
         catagories.appendChild(newDiv)
     });
+}
+
+const greenButtonHandler = async (id) => {
+  const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/post/${id}`)
+  const data = await res.json()
+  console.log(data)
+  const titleConainer = document.getElementById('title-container')
+  const newItem = document.createElement('div')
+  newItem.classList = `flex justify-between items-center bg-white rounded-lg p-2`
+  newItem.innerHTML= `
+    
+                  <h3 class="text-base text-primary font-semibold">${data.title}</h3>
+               
+                <div class="flex items-center gap-2">
+                  <i class="fa-regular fa-eye"></i>
+                  <p>${data.view_count}</p>
+                </div>
+  `
+  titleConainer.appendChild(newItem)
 }
 
 allPost()
