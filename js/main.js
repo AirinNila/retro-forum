@@ -1,5 +1,5 @@
 // all post
-const allPost = async(category) => {
+const allPost = async(category='coding') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
     const data = await res.json()
     const posts = data.posts;
@@ -74,7 +74,13 @@ const handlePost = (data) =>{
     spinnerHandler(false)
 }
 
+// green button
 const greenButtonHandler = async (id) => {
+  // read count
+  const getId = document.getElementById('read-count')
+  const getText = getId.innerText;
+  const makeNbr = parseInt(getText);
+  getId.innerText = makeNbr + 1;
   const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/post/${id}`)
   const data = await res.json()
   console.log(data)
@@ -113,5 +119,6 @@ const spinnerHandler = (dataLoading) => {
     spinnerFeild.classList.add('hidden')
   }
 }
+
 
 allPost()
