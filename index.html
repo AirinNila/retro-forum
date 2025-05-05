@@ -95,7 +95,8 @@
           <div class="bg-white rounded-full flex justify-between md:p-2">
             <input type="search" name="" id="search-field" placeholder="Search here anything"
               class="ml-6 md:ml-2 md:w-56 text-primary">
-            <button onclick="searchHandler()" class="btn rounded-full bg-secondery text-white md:text-xl text-sm p-2 md:px-4">Search</button>
+            <button onclick="searchHandler()"
+              class="btn rounded-full bg-secondery text-white md:text-xl text-sm p-2 md:px-4">Search</button>
           </div>
         </div>
         <!-- search -->
@@ -131,13 +132,14 @@
         <h3 class="text-primary text-2xl md:text-4xl font-bold">Let's Discuss</h3>
         <p class="text-des text-sm md:text-lg text-center">Yes, you can run unit tests and view the results directly
           within the app. The <br> integrated testing features allow for a streamlined </p>
-          <!-- loading spinner -->
-           <div id="spinner-feild" class="flex mt-10 hidden justify-center">
-            <span class="loading loading-spinner loading-lg"></span>
-           </div>
+        <!-- loading spinner -->
+        <div id="spinner-feild" class="flex mt-10 hidden justify-center">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
         <!-- catagories container -->
         <div class="flex flex-col items-center md:flex-row md:items-start gap-4 md:gap-24 mt-4">
-          <div id="catagories-container" class="flex flex-col  w-96 md:w-[500px] justify-center items-start md:gap-4 gap-2">
+          <div id="catagories-container"
+            class="flex flex-col  w-96 md:w-[500px] justify-center items-start md:gap-4 gap-2">
             <!-- catagories -->
             <!-- <div id="catagories"
             class="flex justify-start p-2 md:p-4 bg-[#F3F3F5] rounded-xl md:rounded-2xl gap-2 md:gap-4">
@@ -175,11 +177,12 @@
             </div>
 
           </div> -->
-           
+
 
           </div>
           <!-- title container -->
-          <div id="title-container" class="bg-[#12132D0D] p-4 rounded-xl flex flex-col justify-center items-center gap-2 w-80">
+          <div id="title-container"
+            class="bg-[#12132D0D] p-4 rounded-xl flex flex-col justify-center items-center gap-2 w-80">
             <div class="flex  justify-between w-72 items-center">
               <h3 class="text-xl text-primary font-bold">Title</h3>
               <div class="flex gap-2 items-center">
@@ -188,8 +191,8 @@
               </div>
             </div>
             <!-- append div -->
-             <!-- <div class="flex justify-between items-center bg-white rounded-lg p-2"> -->
-                <!-- <div class="flex flex-col justify-center text-base text-primary font-semibold">
+            <!-- <div class="flex justify-between items-center bg-white rounded-lg p-2"> -->
+            <!-- <div class="flex flex-col justify-center text-base text-primary font-semibold">
                   <h3></h3>
                   <h3></h3>
                 </div>
@@ -197,13 +200,42 @@
                   <i class="fa-regular fa-eye"></i>
                   <p></p>
                 </div> -->
-             <!-- </div> -->
+            <!-- </div> -->
 
           </div>
         </div>
       </div>
     </section>
-    
+    <!-- join forum -->
+    <section class="mt-8">
+      <div class="hero h-84 md:h-96 bg-[#12132D] rounded-2xl">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <img src="./images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" />
+          <div class="md:pl-14">
+            <h1 class="text-5xl text-white font-bold">Join Our Forum</h1>
+            <p class="py-6 text-[#FFFFFFCC]">
+              Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the
+              results directly within the app.
+            </p>
+            <button class="btn rounded-full bg-secondery text-white md:text-xl text-sm p-2 md:px-4">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- leatest post -->
+    <section class="mt-12">
+      <div class="flex flex-col justify-center items-center gap-4 md:">
+        <h3 class="text-primary text-2xl md:text-4xl font-bold">Latest Posts</h3>
+        <p class="text-des text-sm md:text-lg text-center">Yes, you can run unit tests and view the results directly
+          within the app. The <br> integrated testing features allow for a streamlined . </p>
+        <!-- container -->
+        <div id="latest-container" class="flex flex-col md:flex-row justify-center items-center md:items-start gap-4 mt-6">
+   
+
+        </div>
+    </section>
+
   </main>
   <script src="/js/main.js"></script>
 

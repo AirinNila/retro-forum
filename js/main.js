@@ -120,5 +120,45 @@ const spinnerHandler = (dataLoading) => {
   }
 }
 
+// latest post
+const latestPost = async () => {
+  const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+  const data = await res.json()
+  handleLatestPost(data)
+}
 
+// handle latest post 
+const handleLatestPost = (data) => {
+  const getContainer = document.getElementById('latest-container')
+  data.forEach(element => {
+    console.log(element)
+    const newDiv = document.createElement('div')
+    newDiv.classList = `p-4 border-2 border-[#12132D0D] rounded-xl w-80 flex flex-col justify-center items-start gap-2`
+    newDiv.innerHTML= `
+        <div class="rounded-xl">
+              <img src="${element.cover_image}" alt="" class="rounded-xl">
+            </div>
+            <div class="flex items-center gap-2 text-des text-base">
+              <i class="fa-solid fa-calendar-week"></i>
+              <p>${element.author?.posted_date || 'No publish date'}</p>
+            </div>
+            <h3 class="font-bold text-primary text-lg">${element.title}</h3>
+            <p class="text-base text-des">${element.description}</p>
+            <div class="flex gap-2 items-center">
+              <div class="w-12 rounded-full">
+              <img src="${element.profile_image}" alt="" class="rounded-full">
+              </div>
+              <div class="flex flex-col gap-2 justify-center items-start">
+                <h3 class="text-primary text-base">${element.author.name}</h3>
+                <p class="text-des text-sm">${element.author?.designation || 'Unknown'}</p>
+              </div>
+            </div>
+    `
+
+    getContainer.appendChild(newDiv)
+  });
+}
+
+latestPost()
 allPost()
+
